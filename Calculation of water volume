@@ -1,0 +1,35 @@
+To calculate the volume of water, you can use the following Java program based on the provided sources. This program prompts the user for the width of the sphere in inches and then calculates the area in inches, area in feet, volume in inches, volume in feet, and gallons of water.
+
+```java
+import java.util.Scanner;
+
+public class WaterVolumeCalculator {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the width of the sphere in inches: ");
+        double width = input.nextDouble();
+        double radius = width / 2;
+
+        // Constants
+        final double PI = 3.14159;
+        final double GALLONS_CONVERSION = 7.48;
+
+        // Calculations
+        double areaInches = 4 * PI * Math.pow(radius, 2);
+        double areaFeet = areaInches / 12;
+        double volumeInches = (4 / 3) * PI * Math.pow(radius, 3);
+        double volumeFeet = volumeInches / 1728;
+        double gallonsWater = volumeFeet * GALLONS_CONVERSION;
+
+        // Outputs
+        System.out.println("\nCalculated Values:");
+        System.out.println("Area in Inches: " + areaInches);
+        System.out.println("Area in Feet: " + areaFeet);
+        System.out.println("Volume in Inches: " + volumeInches);
+        System.out.println("Volume in Feet: " + volumeFeet);
+        System.out.println("Gallons of Water: " + gallonsWater);
+    }
+}
+```
+
+This program uses the formulas provided in the Stack Overflow post [source](https://stackoverflow.com/questions/46186185/calculating-volume-of-sphere-in-water-tower-calculator-program-java) and the Java programming examples from javatpoint [source](https://www.javatpoint.com/program-to-calculate-the-volume-of-the-sphere). It also includes the conversion from cubic feet to gallons, as explained in the Sciencing article [source](https://sciencing.com/how-to-calculate-water-volume-12193099.html).
